@@ -7,7 +7,7 @@ import ThemeDefault from './theme-default';
 import NotFound from './pages/NotFound/NotFound';
 import Home from './pages/SourceDefinition';
 import LayoutDefinition from './pages/LayoutDefinition';
-
+import RecordTokenizer from './pages/RecordTokenizer';
 export default class App extends Component {
   render() {
     var divStyle = {
@@ -45,6 +45,11 @@ export default class App extends Component {
                     path="/LayoutDefinition"
                     component={LayoutDefinition}
                   />
+                  <Route
+                    exact
+                    path="/RecordTokenizer"
+                    component={RecordTokenizer}
+                  />   
                   <Route path="*" component={NotFound} />
                 </Switch>
               </div>
