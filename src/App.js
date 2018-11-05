@@ -8,6 +8,9 @@ import NotFound from './pages/NotFound/NotFound';
 import Home from './pages/SourceDefinition';
 import LayoutDefinition from './pages/LayoutDefinition';
 import RecordTokenizer from './pages/RecordTokenizer';
+import CenteredGrid from './../src/pages/CenteredGrid';
+import Routes from './components/Routes';
+
 export default class App extends Component {
   render() {
     var divStyle = {
@@ -16,46 +19,7 @@ export default class App extends Component {
 
     return (
       <div>
-        <MuiThemeProvider muiTheme={ThemeDefault}>
-
-          <Router>
-            <div id='container'>
-              <aside>
-                <ul className='menu vertical-menu'>
-                  <li><Link to="/">Home</Link></li>
-                  <li>
-                    <Link to="/Workflow">Workflow</Link>
-                  </li>
-                </ul>
-              </aside>
-              <div id='content' style={divStyle}>
-                <Switch>
-                  <Route
-                    exact
-                    path="/"
-                    component={Home}
-                  />
-                  {/*  <Route
-                    exact
-                    path='/Workflow'
-                    component={Workflow}
-                />*/}
-                   <Route
-                    exact
-                    path="/LayoutDefinition"
-                    component={LayoutDefinition}
-                  />
-                  <Route
-                    exact
-                    path="/RecordTokenizer"
-                    component={RecordTokenizer}
-                  />   
-                  <Route path="*" component={NotFound} />
-                </Switch>
-              </div>
-            </div>
-          </Router>
-        </MuiThemeProvider>
+          <Routes/>
       </div>
     )
   }
